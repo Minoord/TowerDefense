@@ -5,13 +5,7 @@ using UnityEngine;
 public class TowerHealth : MonoBehaviour
 {
     public int towerHealthPoints;
-    //BaiscEnemyAttack EnemyAttack;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        towerHealthPoints = 3000;
-    }
+    public BasicEnemy EnemyAttack;
 
     // Update is called once per frame
     void Update()
@@ -22,11 +16,12 @@ public class TowerHealth : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            //towerHealthPoints -= EnemyAttack.enemyDamage; 
+            print("HEY");
+            towerHealthPoints -= EnemyAttack.BasicAttack; 
         }
     }
 }
