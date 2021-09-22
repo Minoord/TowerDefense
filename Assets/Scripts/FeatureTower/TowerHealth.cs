@@ -10,7 +10,7 @@ public class TowerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (towerHealthPoints == 0)
+        if (towerHealthPoints <= 0)
         {
             Destroy(this.gameObject);
         }
