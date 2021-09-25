@@ -20,4 +20,9 @@ public class BasicEnemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public Vector2 GetPosition()
+    {
+        return transform.position;
+    }
 }
