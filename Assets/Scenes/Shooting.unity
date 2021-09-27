@@ -186,25 +186,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1 &1082585401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4375995480175640055, guid: 06b6ba6937d44504ba96225296905364, type: 3}
-  m_PrefabInstance: {fileID: 2005142434}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1082585407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082585401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36baaf74b929f77408070a8c5449334d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
-  EnemyList: []
 --- !u!1001 &1123345019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -218,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086368572427533418, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.59
+      value: -3.418
       objectReference: {fileID: 0}
     - target: {fileID: 1086368572427533418, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -256,6 +237,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1086368572427533421, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1086368572427533423, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
       propertyPath: m_Name
       value: ShootingEnemy
@@ -280,7 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
-  EnemyList: []
+  EnemyList:
+  - {fileID: 713668467}
 --- !u!1 &1958318985
 GameObject:
   m_ObjectHideFlags: 0

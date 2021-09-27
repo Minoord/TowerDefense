@@ -5,7 +5,6 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public int enemyHealthPoints;
-    public int BasicAttack;
     // Start is called before the first frame update
     void Start()
     {

@@ -8,13 +8,19 @@ public class Shooting : MonoBehaviour
     private BasicEnemy _enemy;
     public List<BasicEnemy> EnemyList = new List<BasicEnemy>();
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.tag == "Enemy")
         {
             _enemy = FindObjectOfType<BasicEnemy>();
             EnemyList.Add(_enemy);
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
             Instantiate(Bullet, transform.position, Quaternion.identity);
         }
     }

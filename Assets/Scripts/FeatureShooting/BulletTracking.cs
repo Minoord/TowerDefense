@@ -5,13 +5,13 @@ using UnityEngine;
 public class BulletTracking : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    private BasicEnemy _currentEnemy;
-    private Shooting _whichEnemy;
-    private Vector2 _bulletsPosition;
+    [SerializeField] private BasicEnemy _currentEnemy;
+    [SerializeField] private Shooting _whichEnemy;
+    [SerializeField] private Vector2 _bulletsPosition;
 
     private void Start()
     {
-        _speed = 2;
+        _speed = 0.001f;
         _whichEnemy = FindObjectOfType<Shooting>();
     }
     // Update is called once per frame
@@ -19,7 +19,16 @@ public class BulletTracking : MonoBehaviour
     {
         _bulletsPosition = this.transform.position;
         _currentEnemy = _whichEnemy.EnemyList[0];
-        transform.LookAt(_currentEnemy.GetPosition());
-        Vector2.MoveTowards(_bulletsPosition, _currentEnemy.transform.position, _speed);
+        //transform.LookAt(_currentEnemy.GetPosition());
+        transform.position =  Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        print("hey");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            _currentEnemy.enemyHealthPoints -= 10;
+            Destroy(this.gameObject);
+        }
     }
 }
