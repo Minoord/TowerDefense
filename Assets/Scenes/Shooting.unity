@@ -199,7 +199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1086368572427533418, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.418
+      value: -1.262
       objectReference: {fileID: 0}
     - target: {fileID: 1086368572427533418, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
-  EnemyList:
-  - {fileID: 713668467}
+  _timer: 0
+  EnemyList: []
 --- !u!1 &1958318985
 GameObject:
   m_ObjectHideFlags: 0

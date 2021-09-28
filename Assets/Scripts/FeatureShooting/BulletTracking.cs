@@ -19,7 +19,6 @@ public class BulletTracking : MonoBehaviour
     {
         _bulletsPosition = this.transform.position;
         _currentEnemy = _whichEnemy.EnemyList[0];
-        //transform.LookAt(_currentEnemy.GetPosition());
         transform.position =  Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
     }
     void OnCollisionEnter2D(Collision2D collision)
