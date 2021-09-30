@@ -11,7 +11,7 @@ public class TowerAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            enemyHP.enemyHealthPoints -= basicAttack; 
+            enemyHP.enemyHealthPoints -= basicAttack;
         }
     }
 }

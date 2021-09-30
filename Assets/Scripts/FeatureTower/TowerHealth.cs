@@ -21,7 +21,7 @@ public class TowerHealth : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             print("HEY");
-            towerHealthPoints -= EnemyAttack.BasicAttack; 
+            //towerHealthPoints -= EnemyAttack.BasicAttack; 
         }
     }
 }
