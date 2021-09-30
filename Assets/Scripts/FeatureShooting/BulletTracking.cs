@@ -5,9 +5,9 @@ using UnityEngine;
 public class BulletTracking : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private BasicEnemy _currentEnemy;
     [SerializeField] private Shooting _whichEnemy;
     [SerializeField] private Vector2 _bulletsPosition;
+    public BasicEnemy _currentEnemy;
 
     private void Start()
     {
@@ -18,8 +18,15 @@ public class BulletTracking : MonoBehaviour
     void Update()
     {
         _bulletsPosition = this.transform.position;
-        _currentEnemy = _whichEnemy.EnemyList[0];
+        _currentEnemy = _whichEnemy.EnemyList[0].GetComponent<BasicEnemy>();
         transform.position =  Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+
+        if (_currentEnemy.enemyHealthPoints == 0)
+        {
+            _whichEnemy.EnemyList.Remove(_currentEnemy.gameObject);
+            Destroy(gameObject);
+        }
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {

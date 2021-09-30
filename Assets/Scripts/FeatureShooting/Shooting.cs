@@ -5,14 +5,13 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject Bullet;
-    private BasicEnemy _enemy;
+    private GameObject _enemy;
     [SerializeField] private float _timer;
-    public List<BasicEnemy> EnemyList = new List<BasicEnemy>();
+    public List<GameObject> EnemyList = new List<GameObject>();
 
 
     private void Update()
     {
-
         _timer -= 1;
     }
 
@@ -21,7 +20,7 @@ public class Shooting : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            _enemy = FindObjectOfType<BasicEnemy>();
+            _enemy = collision.gameObject;
             EnemyList.Add(_enemy);
         }
     }
@@ -36,5 +35,10 @@ public class Shooting : MonoBehaviour
                 Instantiate(Bullet, transform.position, Quaternion.identity);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        EnemyList.Remove(collision.gameObject);
     }
 }
