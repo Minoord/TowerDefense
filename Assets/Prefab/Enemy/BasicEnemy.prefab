@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6463619588165541018}
   - component: {fileID: 6463619588165541021}
   - component: {fileID: 6463619588165541020}
+  - component: {fileID: -2532910229868737514}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -96,4 +97,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealthPoints: 100
-  BasicAttack: 100
+--- !u!114 &-2532910229868737514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463619588165541023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a81d909dd0f7b14f8280e1c2261b7b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 0.004
+  _arrivalTreshold: 0.01
