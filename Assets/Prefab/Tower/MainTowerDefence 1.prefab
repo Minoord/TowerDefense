@@ -45,9 +45,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.005625008, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.6911666
 --- !u!114 &1343110838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +86,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_Name
-      value: MainTowerDefence
+      value: MainTowerDefence 1
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518260, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_RootOrder
