@@ -10,6 +10,7 @@ public class Shooting : MonoBehaviour
     public List<GameObject> EnemyList = new List<GameObject>();
 
 
+
     private void Update()
     {
         _timer -= 1;

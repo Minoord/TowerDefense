@@ -6,7 +6,6 @@ public class TowerHealth : MonoBehaviour
 {
     public int towerHealthPoints;
     public BasicEnemy EnemyAttack;
-
     // Update is called once per frame
     void Update()
     {
@@ -20,8 +19,8 @@ public class TowerHealth : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            print("HEY");
-            //towerHealthPoints -= EnemyAttack.BasicAttack; 
+            EnemyAttack = collision.gameObject.GetComponent<BasicEnemy>();
+            towerHealthPoints -= EnemyAttack.BasicAttack; 
         }
     }
 }

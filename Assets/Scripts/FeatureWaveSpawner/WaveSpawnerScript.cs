@@ -10,102 +10,94 @@ public class WaveSpawnerScript : MonoBehaviour
     //this list contains all the enemies 
     public List<GameObject> EnemiesThatSpawn = new List<GameObject>();
 
-    [SerializeField] private int _whichWave;
-    [SerializeField] private GameObject _whichEnemyToSpawn;
-    [SerializeField] private int _howManyEnemies;
-    [SerializeField] private int _timer;
+    [SerializeField] private int _whichWave; //holds the current wave
+    [SerializeField] private GameObject _whichEnemyToSpawn; //Knows which enemy to spawn
+    [SerializeField] private int _howManyEnemies; //Knows how many enemy it can spawn
+    [SerializeField] private int _timer; // Timer to keep enemies from spawning
 
-    public int betweenTimeWaves;
-    public bool WaveStart;
-    public int minEnemies;
-    public int maxEnemies;
-    public int indexNumb;
+    public int minEnemies; //minium enemies it can spawn
+    public int maxEnemies; // maxium enemies it can spawn
+    public int indexNumb; // knows the index number of _whichEnemyToSpawn
+    int i;
     
     private void Start()
     {
         _whichWave = 1;
         _timer = 0;
+        minEnemies = 5;
+        maxEnemies = 10;
         _howManyEnemies = RandomizeHowManyEnemies();
     }
 
     private void Update()
     {
-        
-        if (WaveStart)
-        {
-            _timer -= 1;
-            betweenTimeWaves = 300;
-
-            if (WaveEnemies.Count >= 0 && _timer <= 0)
-            {
-                AddEnemy();
-                _timer = 200;
-            }
-
             switch (_whichWave)
             {
+                case 0:
+                    Debug.Log("Case 0");;
+                break;
                 case 1:
-                    minEnemies = 5;
-                    maxEnemies = 10;
-                    for (int i = 0; i < _howManyEnemies; i++)
-                    {
-                        indexNumb = Random.Range(1, 2);
-                    }
+                    RandomizeWhichEnemies(0, 2);
                     break;
                 case 2:
                     minEnemies = 10;
                     maxEnemies = 15;
-                    for (int i = 0; i < _howManyEnemies; i++)
-                    {
-                        indexNumb = Random.Range(3, 5); ;
-                    }
+                    RandomizeWhichEnemies(2,5);
                     break;
                 case 3:
                     minEnemies = 15;
                     maxEnemies = 20;
-                    for (int i = 0; i < _howManyEnemies; i++)
-                    {
-                        indexNumb = Random.Range(6, 7);
-                    }
+                    RandomizeWhichEnemies(5, 7);
                     break;
                 case 4:
                     minEnemies = 20;
                     maxEnemies = 25;
-                    for (int i = 0; i < _howManyEnemies; i++)
-                    {
-                        indexNumb = Random.Range(8, 13);
-                    }
+                    RandomizeWhichEnemies(7, 13);
                     break;
             }
+        
+    }
+
+    public int RandomizeHowManyEnemies()
+    {
+        _howManyEnemies = Random.Range(minEnemies,maxEnemies);
+        return _howManyEnemies;
+    }
+    public int RandomizeWhichEnemies(int min, int max)
+    {
+        if(i == _howManyEnemies)
+        {
+            Debug.Log("_howManyEnemies is even groot als i");
             if (WaveEnemies.Count == 0)
             {
+                Debug.Log("New Wave");
                 _whichWave += 1;
-                WaveStart = false;
-                _howManyEnemies = RandomizeHowManyEnemies();
+                _timer = 6000;
+                RandomizeHowManyEnemies();
+                i = 0;
             }
         }
         else
         {
-            betweenTimeWaves -= 1;
-
-            if(betweenTimeWaves <= 0)
-            {
-                WaveStart = true;
-            }
+            _timer -= 1;
+            indexNumb = Random.Range(min, max);
+            ActivateAddEnemy();
         }
-        
+        return indexNumb;
     }
-    public int RandomizeHowManyEnemies()
+    public void ActivateAddEnemy()
     {
-        int howManyEnemies = Random.Range(minEnemies,maxEnemies);
-        return howManyEnemies;
-    }
-
+        if (_timer <= 0)
+        {
+            AddEnemy();
+            i += 1;
+            _timer = 2500;
+        }
+    } 
     public void AddEnemy()
     {
         _whichEnemyToSpawn = EnemiesThatSpawn[indexNumb];
-        WaveEnemies.Add(_whichEnemyToSpawn);
-        Instantiate(_whichEnemyToSpawn);
+        Instantiate(_whichEnemyToSpawn, new Vector3(0,-4,0), Quaternion.identity);
     }
 
 }

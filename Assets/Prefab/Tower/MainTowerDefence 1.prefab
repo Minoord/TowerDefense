@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainTowerDefence 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518260, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -134,7 +138,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518263, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: EnemyAttack
