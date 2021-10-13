@@ -83,6 +83,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 9156361703008886873, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7748962334474557454, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}

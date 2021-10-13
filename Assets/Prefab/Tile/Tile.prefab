@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1753951915042118313}
   m_Layer: 0
   m_Name: Tile
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,13 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1a95e6f82f7344fabfb5f80bb49cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isBuildable: 0
-  _towerPrice: 0
-  tower: {fileID: 4043289252529374416, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
-  spawnpointTower: {fileID: 7700497578910870197}
-  wallet: {fileID: 0}
-  tempColor: {r: 0.2200854, g: 0.5566038, b: 0.20688856, a: 0}
-  normalColor: {r: 0.25882354, g: 0.65882355, b: 0.24313727, a: 0}
 --- !u!61 &1753951915042118313
 BoxCollider2D:
   m_ObjectHideFlags: 0

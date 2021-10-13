@@ -5,6 +5,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject Bullet;
+    public bool canAttack;
     private GameObject _enemy;
     [SerializeField] private float _timer;
     public List<GameObject> EnemyList = new List<GameObject>();
@@ -27,9 +28,8 @@ public class Shooting : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && canAttack == true)
         {
-           
             if(_timer <= 0)
             {
                 _timer = 800;

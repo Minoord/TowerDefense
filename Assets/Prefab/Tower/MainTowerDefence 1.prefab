@@ -61,8 +61,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
+  canAttack: 0
   _timer: 0
   EnemyList: []
+--- !u!114 &3076769030911122350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043289252529374416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a9746b0705a114f944d3b16333562e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isDraggable: 0
+  _inRangeOfTile: 0
+  attackTower: {fileID: 0}
+  healthTower: {fileID: 0}
+  shootingTower: {fileID: 1343110838}
 --- !u!114 &5272781472340117851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +95,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: {fileID: 0}
   basicAttack: 10
+  canAttack: 0
+--- !u!61 &7956442921106933250
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043289252529374416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07237649, y: -0.44029027}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.58986664, y: 0.31242347}
+  m_EdgeRadius: 0
 --- !u!1001 &1918502147379828569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,12 +182,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_Size.x
+      value: 0.62084407
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_Size.y
-      value: 1.3379736
+      value: 0.78972256
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.056132108
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_Offset.y
-      value: 0.06020546
+      value: -0.35867304
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_IsTrigger
@@ -156,7 +209,8 @@ PrefabInstance:
       propertyPath: EnemyAttack
       value: 
       objectReference: {fileID: 1086368572427533420, guid: f19c6a03bcf61c64dbb74b67877f7ad7, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
 --- !u!1 &4043289252529374416 stripped
 GameObject:
