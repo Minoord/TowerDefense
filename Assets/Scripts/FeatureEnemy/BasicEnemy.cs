@@ -5,8 +5,10 @@ using UnityEngine;
 public class BasicEnemy : MonoBehaviour
 {
     public int enemyHealthPoints;
-    public int BasicAttack;
+    public int basicAttack;
+    public int enemyWorth;
     public WaveSpawnerScript WaveSpawnList;
+    public Wallet wallet;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class BasicEnemy : MonoBehaviour
         {
             WaveSpawnList.WaveEnemies.Remove(this.gameObject);
             Destroy(this.gameObject);
+            wallet.AddMoney(enemyWorth);
         }
     }
 

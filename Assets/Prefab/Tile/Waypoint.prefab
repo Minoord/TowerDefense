@@ -19,6 +19,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7748962334474557454, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+      propertyPath: tempColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7748962334474557454, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+      propertyPath: tempColor.g
+      value: 0.7686275
+      objectReference: {fileID: 0}
+    - target: {fileID: -7748962334474557454, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+      propertyPath: tempColor.r
+      value: 0.40784317
+      objectReference: {fileID: 0}
     - target: {fileID: 108176765627579760, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -71,7 +83,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Waypoint
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7748962334474557454, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
 --- !u!1 &6649739638871289679 stripped
 GameObject:

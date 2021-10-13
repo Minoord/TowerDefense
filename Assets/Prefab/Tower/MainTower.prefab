@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHealthPoints: 7000
   EnemyAttack: {fileID: 0}
+  towerAttack: 0
 --- !u!50 &2486908036997518261
 Rigidbody2D:
   serializedVersion: 4
@@ -164,6 +165,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: 0.025975257, y: -0.19914365}
+  m_Size: {x: 0.89828724, y: 1.3982873}
   m_Direction: 0

@@ -17,7 +17,7 @@ public class BulletTracking : MonoBehaviour
     void Update()
     {
         if(_whichEnemy) {
-             _bulletsPosition = this.transform.position;
+            _bulletsPosition = this.transform.position;
             _currentEnemy = _whichEnemy.EnemyList[0].GetComponent<BasicEnemy>();
             transform.position =  Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
 
