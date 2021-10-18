@@ -14,6 +14,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         WaveSpawnList = FindObjectOfType<WaveSpawnerScript>();
+        wallet = FindObjectOfType<Wallet>();
         WaveSpawnList.WaveEnemies.Add(this.gameObject);
     }
 

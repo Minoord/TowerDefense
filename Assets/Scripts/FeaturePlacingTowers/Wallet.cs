@@ -6,6 +6,11 @@ public class Wallet : MonoBehaviour
 {
     public int pocketMoney;
 
+    private void Update()
+    {
+        Debug.Log(pocketMoney);
+    }
+
     public void AddMoney(int moneyToAdd)
     {
         pocketMoney += moneyToAdd;

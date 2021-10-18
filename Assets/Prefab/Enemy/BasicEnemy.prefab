@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6463619588165541020}
   - component: {fileID: -2532910229868737514}
   - component: {fileID: -4661652377337343298}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BasicEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -98,7 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealthPoints: 100
-  BasicAttack: 0
+  basicAttack: 0
+  enemyWorth: 0
+  WaveSpawnList: {fileID: 0}
+  wallet: {fileID: 0}
 --- !u!114 &-2532910229868737514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a81d909dd0f7b14f8280e1c2261b7b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.001
+  _speed: 0.002
   _arrivalTreshold: 0.01
 --- !u!61 &-4661652377337343298
 BoxCollider2D:

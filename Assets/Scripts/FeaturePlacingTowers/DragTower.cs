@@ -5,8 +5,11 @@ using UnityEngine;
 public class DragTower : MonoBehaviour
 {
     private Vector3 _mOffset;
-    [SerializeField] private bool _isDraggable;
     [SerializeField] private bool _inRangeOfTile;
+
+    public bool isDraggable;
+    public int towerWorth;
+    public Wallet wallet;
     public TowerAttack attackTower;
     public TowerHealth healthTower;
     public Shooting shootingTower;
@@ -15,12 +18,13 @@ public class DragTower : MonoBehaviour
     {
         attackTower = this.gameObject.GetComponent<TowerAttack>();
         healthTower = this.gameObject.GetComponent<TowerHealth>();
-        _isDraggable = true;
+        shootingTower = this.gameObject.GetComponent<Shooting>();
+        wallet = FindObjectOfType<Wallet>();
     }
 
     private void Update()
     {
-        if (_isDraggable == false)
+        if (isDraggable == false && _inRangeOfTile)
         {
             attackTower.canAttack = true;
             healthTower.canBeHit = true;
@@ -36,9 +40,10 @@ public class DragTower : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (_inRangeOfTile)
+        if (_inRangeOfTile && isDraggable)
         {
-            _isDraggable = false;
+            isDraggable = false;
+            wallet.pocketMoney -= towerWorth;
         }
     }
     void OnMouseDown()
@@ -48,7 +53,7 @@ public class DragTower : MonoBehaviour
 
     void OnMouseDrag()
     {
-        if (_isDraggable)
+        if (isDraggable)
         {
             transform.position = GetMouseAsWorldPoint() + _mOffset;
         }

@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2486908036997518260}
   - component: {fileID: 2486908036997518263}
   - component: {fileID: 2486908036997518261}
-  - component: {fileID: 2486908036997518262}
+  - component: {fileID: -110463939443524902}
   m_Layer: 0
   m_Name: MainTower
   m_TagString: Untagged
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerHealthPoints: 7000
   EnemyAttack: {fileID: 0}
-  towerAttack: 0
+  canBeHit: 0
 --- !u!50 &2486908036997518261
 Rigidbody2D:
   serializedVersion: 4
@@ -152,8 +152,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!70 &2486908036997518262
-CapsuleCollider2D:
+--- !u!60 &-110463939443524902
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -165,6 +165,31 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025975257, y: -0.19914365}
-  m_Size: {x: 0.89828724, y: 1.3982873}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.21864626, y: 0.6819691}
+      - {x: -0.16373573, y: 0.66970843}
+      - {x: -0.41437948, y: 0.5475401}
+      - {x: -0.42261228, y: 0.32804665}
+      - {x: -0.34382614, y: 0.29302305}
+      - {x: -0.29101136, y: -0.19506693}
+      - {x: -0.36781797, y: -0.23989902}
+      - {x: -0.41153854, y: -0.49799347}
+      - {x: -0.18305121, y: -0.6176217}
+      - {x: 0.24664065, y: -0.6083436}
+      - {x: 0.4063045, y: -0.4028409}
+      - {x: 0.4130644, y: -0.22847788}
+      - {x: 0.36165696, y: -0.1714512}
+      - {x: 0.3527181, y: 0.30088907}
+      - {x: 0.42299074, y: 0.42533553}
+      - {x: 0.4143793, y: 0.5541659}

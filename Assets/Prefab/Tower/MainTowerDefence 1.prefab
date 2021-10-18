@@ -1,69 +1,25 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1398156868682695601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1396247628654336639}
-  - component: {fileID: 4137927881672510800}
-  - component: {fileID: 1343110838}
-  m_Layer: 0
-  m_Name: Range
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1396247628654336639
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398156868682695601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9179, y: 2.9179, z: 2.9179}
-  m_Children: []
-  m_Father: {fileID: 4043289252529374445}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &4137927881672510800
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398156868682695601}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.005625008, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.6911666
---- !u!114 &1343110838
+--- !u!114 &560288242490516809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398156868682695601}
+  m_GameObject: {fileID: 4043289252529374416}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36baaf74b929f77408070a8c5449334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
+  Bullet: {fileID: 0}
+  enemy: {fileID: 0}
   canAttack: 0
+  _radius: 1.5
+  _layer:
+    serializedVersion: 2
+    m_Bits: 0
   _timer: 0
-  EnemyList: []
 --- !u!114 &3076769030911122350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +36,7 @@ MonoBehaviour:
   _inRangeOfTile: 0
   attackTower: {fileID: 0}
   healthTower: {fileID: 0}
-  shootingTower: {fileID: 1343110838}
+  shootingTower: {fileID: 0}
 --- !u!114 &5272781472340117851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,32 +52,6 @@ MonoBehaviour:
   enemyHP: {fileID: 0}
   basicAttack: 10
   canAttack: 0
---- !u!61 &7956442921106933250
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4043289252529374416}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.07237649, y: -0.44029027}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.58986664, y: 0.31242347}
-  m_EdgeRadius: 0
 --- !u!1001 &1918502147379828569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,6 +59,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -110463939443524902, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_Name
       value: MainTowerDefence 1
@@ -215,10 +149,5 @@ PrefabInstance:
 --- !u!1 &4043289252529374416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
-  m_PrefabInstance: {fileID: 1918502147379828569}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4043289252529374445 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2486908036997518260, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
   m_PrefabInstance: {fileID: 1918502147379828569}
   m_PrefabAsset: {fileID: 0}

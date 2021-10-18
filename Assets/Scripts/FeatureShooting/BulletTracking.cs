@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletTracking : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Shooting _whichEnemy;
+    [SerializeField] private Shooting _shooting;
     [SerializeField] private Vector2 _bulletsPosition;
     public BasicEnemy _currentEnemy;
 
@@ -16,30 +16,30 @@ public class BulletTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(_whichEnemy) {
+        if (_shooting.enemy)
+        {
             _bulletsPosition = this.transform.position;
-            _currentEnemy = _whichEnemy.EnemyList[0].GetComponent<BasicEnemy>();
-            transform.position =  Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+            _currentEnemy = _shooting.enemy;
+            transform.position = Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
 
-            if (_currentEnemy.enemyHealthPoints == 0 && _whichEnemy != null)
+            if (_currentEnemy.enemyHealthPoints == 0 )
             {
                 Destroy(gameObject);
-                _whichEnemy.EnemyList.Remove(_currentEnemy.gameObject);
             }
         }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-       
+
     }
-
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        _whichEnemy = collision.gameObject.GetComponent<Shooting>();
+        _shooting = collision.gameObject.GetComponent<Shooting>();
     }
-    
-
     void OnCollisionEnter2D(Collision2D collision)
     {
-        print("hey");
         if (collision.gameObject.tag == "Enemy")
         {
             _currentEnemy.enemyHealthPoints -= 10;

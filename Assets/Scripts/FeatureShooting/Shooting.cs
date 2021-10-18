@@ -5,41 +5,50 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject Bullet;
+    public BasicEnemy enemy;
     public bool canAttack;
-    private GameObject _enemy;
-    [SerializeField] private float _timer;
-    public List<GameObject> EnemyList = new List<GameObject>();
 
+    [SerializeField] private float _radius;
+    [SerializeField] private LayerMask _layer;
+    [SerializeField] private int _timer;
 
+    private void Start()
+    {
+        _timer = 1000;
+    }
 
     private void Update()
     {
-        _timer -= 1;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.tag == "Enemy")
+        enemy = GetFirstEnemyInRange();
+        if (canAttack)
         {
-            _enemy = collision.gameObject;
-            EnemyList.Add(_enemy);
+            _timer -= 1;
         }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy" && canAttack == true)
+
+        if(enemy && _timer <= 0)
         {
-            if(_timer <= 0)
-            {
-                _timer = 800;
-                Instantiate(Bullet, transform.position, Quaternion.identity);
-            }
+            Instantiate(Bullet, this.gameObject.transform.position, Quaternion.identity);
+            _timer = 1000;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public BasicEnemy GetFirstEnemyInRange()
     {
-        EnemyList.Remove(collision.gameObject);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _radius, _layer);
+        if (cols.Length <= 0)
+        {
+            Debug.Log("Cols is empty");
+            return null;
+        }
+        else
+        {
+            Debug.Log(cols.Length);
+        }
+        return cols[0].GetComponent<BasicEnemy>();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }
