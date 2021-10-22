@@ -15,4 +15,9 @@ public class Wallet : MonoBehaviour
     {
         pocketMoney += moneyToAdd;
     }
+
+    public void MinusMoney(int minusMoney)
+    {
+        pocketMoney -= minusMoney;
+    }
 }

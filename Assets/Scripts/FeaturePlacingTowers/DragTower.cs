@@ -9,10 +9,13 @@ public class DragTower : MonoBehaviour
 
     public bool isDraggable;
     public int towerWorth;
+    public Shop shop;
     public Wallet wallet;
     public TowerAttack attackTower;
     public TowerHealth healthTower;
     public Shooting shootingTower;
+    public GameObject placeInShop;
+    public GameObject thisTowerPrefab;
 
     private void Start()
     {
@@ -42,8 +45,9 @@ public class DragTower : MonoBehaviour
     {
         if (_inRangeOfTile && isDraggable)
         {
+            wallet.MinusMoney(towerWorth);
+            shop.RefillShop(thisTowerPrefab, placeInShop);
             isDraggable = false;
-            wallet.pocketMoney -= towerWorth;
         }
     }
     void OnMouseDown()
@@ -69,6 +73,18 @@ public class DragTower : MonoBehaviour
         {
             _inRangeOfTile = false;
             //Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Shop")
+        {
+            isDraggable = true;
+        }
+        else
+        {
+            if(_inRangeOfTile == false && isDraggable)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 

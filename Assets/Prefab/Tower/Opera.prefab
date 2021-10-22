@@ -7,9 +7,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: placeInShop
+      value: 
+      objectReference: {fileID: 2824069346722256036, guid: 4eb53c314f5fd404bbcda2a7fe5910e2, type: 3}
+    - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: thisTowerPrefab
+      value: 
+      objectReference: {fileID: 8269296097476006807}
     - target: {fileID: 4043289252529374416, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: m_Name
-      value: MainTowerDefence 1
+      value: Opera
       objectReference: {fileID: 0}
     - target: {fileID: 4043289252529374445, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: m_RootOrder
@@ -57,3 +65,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+--- !u!1 &8269296097476006807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4043289252529374416, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+  m_PrefabInstance: {fileID: 5394985643308734279}
+  m_PrefabAsset: {fileID: 0}
