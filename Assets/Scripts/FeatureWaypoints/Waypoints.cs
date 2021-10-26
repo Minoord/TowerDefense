@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Waypoints : MonoBehaviour
 {
-   public Vector2 GetPosition()
+    public GameObject _spawnPlaceTower;
+
+    public Vector2 GetPosition()
     {
         return transform.position;
     }

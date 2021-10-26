@@ -58,12 +58,11 @@ MonoBehaviour:
   - {fileID: 404710649649405868, guid: aa2c343c84f41834ebae6f4d6a2c9df1, type: 3}
   - {fileID: 60651501038199123, guid: debb931f4ffd8df469d8dc8e5d466fd5, type: 3}
   - {fileID: 1051890705162014677, guid: a3ad44109c79a1f45ba11deec94dac94, type: 3}
-  _whichWave: 0
+  _whichWave: 1
   _whichEnemyToSpawn: {fileID: 0}
+  _spawnPoint: {fileID: 0}
   _howManyEnemies: 0
   _timer: 0
-  betweenTimeWaves: 0
-  WaveStart: 0
   minEnemies: 0
   maxEnemies: 0
   indexNumb: 0

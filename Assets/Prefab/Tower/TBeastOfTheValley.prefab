@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2275222112755598571
+--- !u!1001 &1848558765151530062
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,16 +8,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: towerWorth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: placeInShop
       value: 
-      objectReference: {fileID: 5704575252172829420, guid: 679eb4f1cdbc92b439eb357cf002efcb, type: 3}
+      objectReference: {fileID: 2430747805986433182}
     - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: thisTowerPrefab
       value: 
-      objectReference: {fileID: 2850655778841444411}
+      objectReference: {fileID: 2430747805986433182}
+    - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: _nameOfThePlaceShop
+      value: TowerBeastOfTheValley
+      objectReference: {fileID: 0}
     - target: {fileID: 4043289252529374416, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: m_Name
-      value: Kalego
+      value: TBeastOfTheValley
       objectReference: {fileID: 0}
     - target: {fileID: 4043289252529374445, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: m_RootOrder
@@ -65,8 +73,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
---- !u!1 &2850655778841444411 stripped
+--- !u!1 &2430747805986433182 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4043289252529374416, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
-  m_PrefabInstance: {fileID: 2275222112755598571}
+  m_PrefabInstance: {fileID: 1848558765151530062}
   m_PrefabAsset: {fileID: 0}

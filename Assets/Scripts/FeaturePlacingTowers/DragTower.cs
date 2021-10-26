@@ -6,13 +6,13 @@ public class DragTower : MonoBehaviour
 {
     private Vector3 _mOffset;
     [SerializeField] private bool _inRangeOfTile;
+    [SerializeField] private string _nameOfThePlaceShop;
 
     public bool isDraggable;
     public int towerWorth;
     public Shop shop;
     public Wallet wallet;
     public TowerAttack attackTower;
-    public TowerHealth healthTower;
     public Shooting shootingTower;
     public GameObject placeInShop;
     public GameObject thisTowerPrefab;
@@ -20,17 +20,20 @@ public class DragTower : MonoBehaviour
     private void Start()
     {
         attackTower = this.gameObject.GetComponent<TowerAttack>();
-        healthTower = this.gameObject.GetComponent<TowerHealth>();
         shootingTower = this.gameObject.GetComponent<Shooting>();
         wallet = FindObjectOfType<Wallet>();
+        shop = FindObjectOfType<Shop>();
+        placeInShop = GameObject.Find(_nameOfThePlaceShop);
+        _inRangeOfTile = false;
+        isDraggable = true;
     }
 
     private void Update()
     {
         if (isDraggable == false && _inRangeOfTile)
         {
+
             attackTower.canAttack = true;
-            healthTower.canBeHit = true;
             shootingTower.canAttack = true;
         }
     }
@@ -53,6 +56,15 @@ public class DragTower : MonoBehaviour
     void OnMouseDown()
     {
         _mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
+        
+       if (wallet.pocketMoney >= towerWorth && _inRangeOfTile == false )
+        {
+            isDraggable = true;
+        }
+        else
+        {
+            isDraggable = false;
+        }
     }
 
     void OnMouseDrag()
@@ -63,28 +75,20 @@ public class DragTower : MonoBehaviour
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Tile")
+
+        if (collision.gameObject.tag == "Tile")
         {
+            Debug.Log("in range of tile");
             _inRangeOfTile = true;
         }
         else
         {
             _inRangeOfTile = false;
             //Destroy(this.gameObject);
-        }
-
-        if (collision.gameObject.tag == "Shop")
-        {
-            isDraggable = true;
-        }
-        else
-        {
-            if(_inRangeOfTile == false && isDraggable)
-            {
-                Destroy(this.gameObject);
-            }
         }
     }
 

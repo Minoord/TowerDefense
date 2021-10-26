@@ -14,8 +14,6 @@ public class ShopBackground : MonoBehaviour
     [SerializeField] private float _shopWidth;
     [SerializeField] private float _shopPosX;
 
-
-
     private void Start()
     {
         _shopBG = this.gameObject;
@@ -26,7 +24,7 @@ public class ShopBackground : MonoBehaviour
         _shopWidth = Screen.width / 5;
         _shopHeight = Screen.height;
         _shopPosX = Screen.width / 5 * 2;
-        _shopBG.transform.position = new Vector2(_shopPosX,0);
+        _shopBG.transform.position = new Vector2(_shopPosX, Screen.height);
         _shopBG.transform.localScale = new Vector2(_shopWidth, _shopHeight);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6f41108975fd438e7dd26bf580740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnPlaceTower: {fileID: 5297597875460040099}
 --- !u!1001 &2547190814762864406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35,6 +36,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b67236671f07b8440b8bbd50037dfb71, type: 2}
+    - target: {fileID: 3016343815846173229, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.377
+      objectReference: {fileID: 0}
     - target: {fileID: 4373920393209212969, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -93,5 +98,10 @@ PrefabInstance:
 --- !u!1 &6649739638871289679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9156361703008886873, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
+  m_PrefabInstance: {fileID: 2547190814762864406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5297597875460040099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7700497578910870197, guid: 9f954e14d65abf946b8e256ea40bbe78, type: 3}
   m_PrefabInstance: {fileID: 2547190814762864406}
   m_PrefabAsset: {fileID: 0}

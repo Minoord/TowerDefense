@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36baaf74b929f77408070a8c5449334d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
   enemy: {fileID: 0}
   canAttack: 0
-  _radius: 1.5
+  _radius: 150
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   _timer: 0
 --- !u!114 &3076769030911122350
 MonoBehaviour:
@@ -32,11 +32,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a9746b0705a114f944d3b16333562e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDraggable: 0
   _inRangeOfTile: 0
+  _nameOfThePlaceShop: 
+  isDraggable: 0
+  towerWorth: 0
+  shop: {fileID: 0}
+  wallet: {fileID: 0}
   attackTower: {fileID: 0}
-  healthTower: {fileID: 0}
   shootingTower: {fileID: 0}
+  placeInShop: {fileID: 0}
+  thisTowerPrefab: {fileID: 0}
 --- !u!114 &5272781472340117851
 MonoBehaviour:
   m_ObjectHideFlags: 0

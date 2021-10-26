@@ -10,31 +10,35 @@ public class Shop : MonoBehaviour
     //4 and takes money from the wallet V
     //5 refills the shop v
 
-    public int worthOfTheTower;
-    public Wallet wallet;
-    public DragTower draggableTower;
+    [SerializeField] private GameObject _towerOperaPlace;
+    [SerializeField] private GameObject _towerSullivianPlace;
+    [SerializeField] private GameObject _towerAsmodeusPlace;
+    [SerializeField] private GameObject _towerClaraPlace;
+    [SerializeField] private GameObject _towerKalegoPlace;
+    [SerializeField] private GameObject _towerBeastOfValleyPlace;
+
+    [SerializeField] private GameObject _towerOpera;
+    [SerializeField] private GameObject _towerSullivian;
+    [SerializeField] private GameObject _towerAsmodeus;
+    [SerializeField] private GameObject _towerClara;
+    [SerializeField] private GameObject _towerKalego;
+    [SerializeField] private GameObject _towerBeastOfValley;
 
     public void RefillShop(GameObject refillTower, GameObject towerPlace)
     {
         Instantiate(refillTower, towerPlace.transform.position, Quaternion.identity);
     }
 
+    public void RefillShopStart()
+    {
+        RefillShop(_towerOpera, _towerOperaPlace);
+        RefillShop(_towerSullivian, _towerSullivianPlace);
+        RefillShop(_towerClara, _towerClaraPlace);
+        RefillShop(_towerKalego, _towerKalegoPlace);
+        RefillShop(_towerBeastOfValley, _towerBeastOfValleyPlace);
+    }
     private void Start()
     {
-        wallet = FindObjectOfType<Wallet>();
-    }
-
-    private void Update()
-    {
-        worthOfTheTower = draggableTower.towerWorth;
-
-        if(wallet.pocketMoney >= worthOfTheTower)
-        {
-            draggableTower.isDraggable = true;
-        }
-        else
-        {
-            draggableTower.isDraggable = false;
-        }
+        Invoke("RefillShopStart", 1);
     }
 }

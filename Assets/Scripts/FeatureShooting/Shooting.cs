@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        _timer = 1000;
+        _timer = 500;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class Shooting : MonoBehaviour
         if(enemy && _timer <= 0)
         {
             Instantiate(Bullet, this.gameObject.transform.position, Quaternion.identity);
-            _timer = 1000;
+            _timer = 500;
         }
     }
 

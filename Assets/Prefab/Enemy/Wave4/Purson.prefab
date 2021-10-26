@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2532910229868737514, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
+      propertyPath: _speed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 6463619588165541018, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +55,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6463619588165541020, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
+      propertyPath: enemyWorth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6463619588165541020, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
+      propertyPath: basicAttack
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6463619588165541023, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
       propertyPath: m_Name
-      value: BasicEnemy
+      value: Purson
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}

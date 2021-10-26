@@ -12,6 +12,7 @@ public class WaveSpawnerScript : MonoBehaviour
 
     [SerializeField] private int _whichWave; //holds the current wave
     [SerializeField] private GameObject _whichEnemyToSpawn; //Knows which enemy to spawn
+    [SerializeField] private GameObject _spawnPoint; // where the enemy needs to spawn
     [SerializeField] private int _howManyEnemies; //Knows how many enemy it can spawn
     [SerializeField] private int _timer; // Timer to keep enemies from spawning
 
@@ -97,7 +98,7 @@ public class WaveSpawnerScript : MonoBehaviour
     public void AddEnemy()
     {
         _whichEnemyToSpawn = EnemiesThatSpawn[indexNumb];
-        Instantiate(_whichEnemyToSpawn, new Vector3(0,-4,0), Quaternion.identity);
+        Instantiate(_whichEnemyToSpawn, _spawnPoint.transform.position, Quaternion.identity);
     }
 
 }

@@ -5,6 +5,15 @@ using UnityEngine;
 public class PathScript : MonoBehaviour
 {
     [SerializeField] private Waypoints[] _waypoints;
+    [SerializeField] private GameObject _mainTower;
+
+    private GameObject _spawnTower;
+
+    private void Start()
+    {
+        _spawnTower = _waypoints[_waypoints.Length - 1]._spawnPlaceTower;
+        Instantiate(_mainTower, _spawnTower.transform.position, Quaternion.identity);
+    }
 
     public Waypoints GetPathStart()
     {
