@@ -79,8 +79,8 @@ Transform:
   - {fileID: 2076356864141008545}
   - {fileID: 2076356865601431885}
   - {fileID: 2076356864768425632}
-  - {fileID: 2076356865499905036}
   - {fileID: 2076356865139581229}
+  - {fileID: 2076356865499905036}
   - {fileID: 2076356865059228281}
   - {fileID: 2076356864848671292}
   m_Father: {fileID: 0}
@@ -379,7 +379,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2076356864178790432}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2076356865139581228
 MonoBehaviour:
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c74a10062ae91468aa43702d8f66f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberPlaceInShop: 5
+  _numberPlaceInShop: 4
   _maxLengthOfShop: 0
   _numberOfTowers: 7
   _shopBG: {fileID: 0}
@@ -426,7 +426,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2076356864178790432}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2076356865499905039
 MonoBehaviour:
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53c74a10062ae91468aa43702d8f66f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberPlaceInShop: 4
+  _numberPlaceInShop: 5
   _maxLengthOfShop: 0
   _numberOfTowers: 7
   _shopBG: {fileID: 0}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WaveSpawnerScript : MonoBehaviour
 {
@@ -55,6 +56,9 @@ public class WaveSpawnerScript : MonoBehaviour
                     maxEnemies = 25;
                     RandomizeWhichEnemies(7, 13);
                     break;
+                case 5:
+                    SceneManager.LoadScene("WinGame");
+                    break;
             }
         
     }
@@ -73,7 +77,7 @@ public class WaveSpawnerScript : MonoBehaviour
             {
                 Debug.Log("New Wave");
                 _whichWave += 1;
-                _timer = 6000;
+                _timer = 3000;
                 RandomizeHowManyEnemies();
                 i = 0;
             }

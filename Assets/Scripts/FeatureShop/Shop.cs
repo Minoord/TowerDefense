@@ -33,6 +33,7 @@ public class Shop : MonoBehaviour
     {
         RefillShop(_towerOpera, _towerOperaPlace);
         RefillShop(_towerSullivian, _towerSullivianPlace);
+        RefillShop(_towerAsmodeus, _towerAsmodeusPlace);
         RefillShop(_towerClara, _towerClaraPlace);
         RefillShop(_towerKalego, _towerKalegoPlace);
         RefillShop(_towerBeastOfValley, _towerBeastOfValleyPlace);

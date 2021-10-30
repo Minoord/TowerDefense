@@ -5,11 +5,12 @@ using UnityEngine;
 public class DragTower : MonoBehaviour
 {
     private Vector3 _mOffset;
-    [SerializeField] private bool _inRangeOfTile;
     [SerializeField] private string _nameOfThePlaceShop;
 
     public bool isDraggable;
+    public bool inRangeOfTile;
     public int towerWorth;
+    public TileScript tile;
     public Shop shop;
     public Wallet wallet;
     public TowerAttack attackTower;
@@ -24,13 +25,13 @@ public class DragTower : MonoBehaviour
         wallet = FindObjectOfType<Wallet>();
         shop = FindObjectOfType<Shop>();
         placeInShop = GameObject.Find(_nameOfThePlaceShop);
-        _inRangeOfTile = false;
+        inRangeOfTile = false;
         isDraggable = true;
     }
 
     private void Update()
     {
-        if (isDraggable == false && _inRangeOfTile)
+        if (isDraggable == false && inRangeOfTile)
         {
 
             attackTower.canAttack = true;
@@ -46,18 +47,36 @@ public class DragTower : MonoBehaviour
 
     private void OnMouseUp()
     {
-        if (_inRangeOfTile && isDraggable)
+        if (inRangeOfTile && isDraggable)
         {
-            wallet.MinusMoney(towerWorth);
-            shop.RefillShop(thisTowerPrefab, placeInShop);
-            isDraggable = false;
+            if(tile == true)
+            {
+                wallet.MinusMoney(towerWorth);
+                shop.RefillShop(thisTowerPrefab, placeInShop);
+                this.transform.position = tile.transform.position;
+                tile.canBuildOn = false;
+                isDraggable = false;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
+        else
+        {
+            if (inRangeOfTile == false && isDraggable)
+            {
+                shop.RefillShop(thisTowerPrefab, placeInShop);
+                Destroy(gameObject);
+            }
+        }
+
     }
     void OnMouseDown()
     {
         _mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
         
-       if (wallet.pocketMoney >= towerWorth && _inRangeOfTile == false )
+       if (wallet.pocketMoney >= towerWorth && inRangeOfTile == false )
         {
             isDraggable = true;
         }
@@ -75,22 +94,6 @@ public class DragTower : MonoBehaviour
         }
     }
 
-
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.tag == "Tile")
-        {
-            Debug.Log("in range of tile");
-            _inRangeOfTile = true;
-        }
-        else
-        {
-            _inRangeOfTile = false;
-            //Destroy(this.gameObject);
-        }
-    }
 
 }
 

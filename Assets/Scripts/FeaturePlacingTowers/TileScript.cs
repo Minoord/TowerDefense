@@ -5,5 +5,9 @@ using UnityEngine.UI;
 
 public class TileScript : MonoBehaviour
 {
-    
+    public bool canBuildOn;
+    private void Start()
+    {
+        canBuildOn = true;
+    }
 }

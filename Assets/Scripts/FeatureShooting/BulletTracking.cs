@@ -16,21 +16,25 @@ public class BulletTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_shooting && _shooting.enemy)
+        if (_shooting )
         {
-            _bulletsPosition = this.transform.position;
-            _currentEnemy = _shooting.enemy;
-            transform.position = Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+            if (_shooting.enemy)
+            {
+                _bulletsPosition = this.transform.position;
+                _currentEnemy = _shooting.enemy;
+                transform.position = Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
 
-            if (_currentEnemy.enemyHealthPoints == 0 )
+            if (_currentEnemy.enemyHealthPoints == 0 || _currentEnemy == null)
             {
                 Destroy(gameObject);
             }
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
 
 
     }

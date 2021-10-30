@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class TowerHealth : MonoBehaviour
@@ -13,6 +14,7 @@ public class TowerHealth : MonoBehaviour
         if (towerHealthPoints <= 0)
         {
             Destroy(this.gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 
