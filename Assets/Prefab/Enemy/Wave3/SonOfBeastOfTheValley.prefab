@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6463619588165541020, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
       propertyPath: basicAttack
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6463619588165541020, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
       propertyPath: enemyHealthPoints
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 6463619588165541023, guid: 4bbabbf9328c4924b9d19f9b9825692b, type: 3}
       propertyPath: m_Name

@@ -66,7 +66,7 @@ MonoBehaviour:
   Bullet: {fileID: 1209003641260081676, guid: af3f844aad35645448cc4a01fe1841e7, type: 3}
   enemy: {fileID: 0}
   canAttack: 0
-  _radius: 150
+  _radius: 300
   _layer:
     serializedVersion: 2
     m_Bits: 8
@@ -106,9 +106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc7e8d2555c4924ca62ffc1d0d39146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: {fileID: 0}
-  basicAttack: 10
+  enemy: {fileID: 0}
   canAttack: 0
+  _radius: 150
+  _layer:
+    serializedVersion: 2
+    m_Bits: 8
+  _timer: 0
+  _attackDamage: 0
 --- !u!50 &4824912399181421404
 Rigidbody2D:
   serializedVersion: 4
@@ -212,9 +217,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CollisionTowerPlace
       objectReference: {fileID: 0}
+    - target: {fileID: 2486908035097920408, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486908035097920408, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_Name
       value: MainTowerDefence 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2486908036997518217, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
       propertyPath: m_TagString
@@ -295,6 +312,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
     - {fileID: 2486908035097920390, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+    - {fileID: 2486908036997518263, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
 --- !u!1 &4043289252529374416 stripped
 GameObject:

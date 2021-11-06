@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 560288242490516809, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 6298905597877415201, guid: 4a54688c81902294ebb6e9b09d8e6254, type: 3}
+    - target: {fileID: 560288242490516809, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
+      propertyPath: _radius
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 3076769030911122350, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
       propertyPath: towerWorth
       value: 300
@@ -75,7 +83,8 @@ PrefabInstance:
       propertyPath: basicAttack
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5272781472340117851, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b2a361b35da75034c92fa6fa10738631, type: 3}
 --- !u!1 &4671747872476923046 stripped
 GameObject:

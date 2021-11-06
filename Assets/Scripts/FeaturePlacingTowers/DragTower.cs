@@ -13,6 +13,7 @@ public class DragTower : MonoBehaviour
     public TileScript tile;
     public Shop shop;
     public Wallet wallet;
+    public TowerPlaceShop towerPlaceShop;
     public TowerAttack attackTower;
     public Shooting shootingTower;
     public GameObject placeInShop;
@@ -25,6 +26,8 @@ public class DragTower : MonoBehaviour
         wallet = FindObjectOfType<Wallet>();
         shop = FindObjectOfType<Shop>();
         placeInShop = GameObject.Find(_nameOfThePlaceShop);
+        towerPlaceShop = placeInShop.GetComponentInChildren<TowerPlaceShop>();
+        towerWorth = towerPlaceShop.towerPrice;
         inRangeOfTile = false;
         isDraggable = true;
     }
@@ -33,9 +36,14 @@ public class DragTower : MonoBehaviour
     {
         if (isDraggable == false && inRangeOfTile)
         {
-
-            attackTower.canAttack = true;
-            shootingTower.canAttack = true;
+            if (shootingTower)
+            {
+                shootingTower.canAttack = true;
+            }
+            else if (attackTower)
+            {
+                attackTower.canAttack = true;
+            }
         }
     }
 
@@ -52,8 +60,9 @@ public class DragTower : MonoBehaviour
             if(tile == true)
             {
                 wallet.MinusMoney(towerWorth);
+                towerPlaceShop.towerPrice += 30;
                 shop.RefillShop(thisTowerPrefab, placeInShop);
-                this.transform.position = tile.transform.position;
+                this.transform.position = new Vector2 (tile.transform.position.x , tile.transform.position.y + 30);
                 tile.canBuildOn = false;
                 isDraggable = false;
             }
@@ -76,7 +85,7 @@ public class DragTower : MonoBehaviour
     {
         _mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
         
-       if (wallet.pocketMoney >= towerWorth && inRangeOfTile == false )
+       if (wallet.pocketMoney >= towerWorth && inRangeOfTile == false)
         {
             isDraggable = true;
         }

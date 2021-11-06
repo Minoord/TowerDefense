@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _shooting: {fileID: 0}
+  damage: 10
   _bulletsPosition: {x: 0, y: 0}
-  _currentEnemy: {fileID: 0}
 --- !u!70 &1993260720951925328
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

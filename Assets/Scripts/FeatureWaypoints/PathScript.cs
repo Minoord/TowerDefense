@@ -15,6 +15,12 @@ public class PathScript : MonoBehaviour
         Instantiate(_mainTower, _spawnTower.transform.position, Quaternion.identity);
     }
 
+    private void Update()
+    {
+        _mainTower = GameObject.Find("MainTower(Clone)");
+        _mainTower.transform.position = _spawnTower.transform.position;
+    }
+
     public Waypoints GetPathStart()
     {
         return _waypoints[0];

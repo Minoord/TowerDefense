@@ -10,7 +10,7 @@ public class Wallet : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(pocketMoney);
+        //Debug.Log(pocketMoney);
         PrintWallet.text = "Money:" + pocketMoney;
     }
 

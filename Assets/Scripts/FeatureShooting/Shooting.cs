@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _radius, _layer);
         if (cols.Length <= 0)
         {
-            Debug.Log("Cols is empty");
+            //Debug.Log("Cols is empty");
             return null;
         }
         else

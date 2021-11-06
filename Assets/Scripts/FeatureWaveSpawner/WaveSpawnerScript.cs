@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WaveSpawnerScript : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class WaveSpawnerScript : MonoBehaviour
     public int minEnemies; //minium enemies it can spawn
     public int maxEnemies; // maxium enemies it can spawn
     public int indexNumb; // knows the index number of _whichEnemyToSpawn
+    public Text printWave;
     int i;
     
     private void Start()
@@ -29,11 +31,13 @@ public class WaveSpawnerScript : MonoBehaviour
         minEnemies = 5;
         maxEnemies = 10;
         _howManyEnemies = RandomizeHowManyEnemies();
+         printWave = GameObject.Find("WaveCount").GetComponent<Text>();
     }
 
     private void Update()
     {
-            switch (_whichWave)
+        printWave.text = "Wave:" + _whichWave;
+        switch (_whichWave)
             {
                 case 0:
                     Debug.Log("Case 0");;
@@ -94,7 +98,7 @@ public class WaveSpawnerScript : MonoBehaviour
     {
         if (_timer <= 0)
         {
-            AddEnemy();
+            Invoke("AddEnemy", 1);
             i += 1;
             _timer = 2500;
         }

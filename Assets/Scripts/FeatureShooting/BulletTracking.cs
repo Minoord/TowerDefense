@@ -6,37 +6,48 @@ public class BulletTracking : MonoBehaviour
 {
     [SerializeField] private float _speed;
     public Shooting _shooting;
+    public int damage;
     [SerializeField] private Vector2 _bulletsPosition;
-    private BasicEnemy _currentEnemy;
+    public BasicEnemy currentEnemy;
+    private Renderer rend;
 
     private void Start()
     {
         _speed = 0.4f;
+        rend = this.gameObject.GetComponent<Renderer>();
+        rend.enabled = false;
+        Invoke("ScreachEnemy", 1);
     }
     // Update is called once per frame
     void Update()
     {
-        if (_shooting )
+        if (currentEnemy)
         {
-            if (_shooting.enemy)
+            _bulletsPosition = this.transform.position;
+            transform.position = Vector2.MoveTowards(_bulletsPosition, currentEnemy.GetPosition(), _speed);
+
+            if (currentEnemy.enemyHealthPoints == 0)
             {
-                _bulletsPosition = this.transform.position;
-                _currentEnemy = _shooting.enemy;
-                transform.position = Vector2.MoveTowards(_bulletsPosition, _currentEnemy.GetPosition(), _speed);
+                Destroy(gameObject);
             }
-            else
+            if (currentEnemy == null)
             {
                 Destroy(gameObject);
             }
 
-            if (_currentEnemy.enemyHealthPoints == 0 || _currentEnemy == null)
-            {
-                Destroy(gameObject);
-            }
         }
 
 
 
+
+    }
+    private void ScreachEnemy()
+    {
+        if (_shooting && _shooting.enemy)
+        {
+            rend.enabled = true;
+            currentEnemy = _shooting.enemy;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,11 +57,11 @@ public class BulletTracking : MonoBehaviour
         }
             
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            _currentEnemy.enemyHealthPoints -= 10;
+            currentEnemy.TakeDamage(damage);
             Destroy(this.gameObject);
         }
     }

@@ -4,16 +4,51 @@ using UnityEngine;
 
 public class TowerAttack : MonoBehaviour
 {
-    public BasicEnemy enemyHP;
-    public int basicAttack;
+    public BasicEnemy enemy;
     public bool canAttack;
 
-    void OnCollisionStay2D(Collision2D collision)
+    [SerializeField] private float _radius;
+    [SerializeField] private LayerMask _layer;
+    [SerializeField] private float _timer;
+    [SerializeField] private int _attackDamage;
+
+    private void Start()
     {
-        if (collision.gameObject.tag == "Enemy" && canAttack == true)
+        _timer = 400;
+    }
+
+    private void Update()
+    {
+        enemy = GetFirstEnemyInRange();
+        if (canAttack)
         {
-            enemyHP = collision.gameObject.GetComponent<BasicEnemy>();
-            enemyHP.enemyHealthPoints -= basicAttack;
+            _timer -= Time.deltaTime;
         }
+
+        if (enemy && _timer <= 0)
+        {
+            enemy.TakeDamage(_attackDamage);
+            _timer = 10;
+        }
+    }
+
+    public BasicEnemy GetFirstEnemyInRange()
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, _radius, _layer);
+        if (cols.Length <= 0)
+        {
+            //Debug.Log("Cols is empty");
+            return null;
+        }
+        else
+        {
+            Debug.Log(cols.Length);
+        }
+        return cols[0].GetComponent<BasicEnemy>();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2486908035097920409}
   - component: {fileID: 2486908035097920390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2486908036997518263}
   - component: {fileID: 2486908036997518261}
   - component: {fileID: -110463939443524902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MainTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2486908036997518217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2030, y: 1481, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
   m_Children:
   - {fileID: 2486908035097920409}
@@ -128,9 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c3f4c584483054e8fa6d5bebe29305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerHealthPoints: 7000
+  towerHealthPoints: 5
   EnemyAttack: {fileID: 0}
-  canBeHit: 1
+  printLives: {fileID: 0}
 --- !u!50 &2486908036997518261
 Rigidbody2D:
   serializedVersion: 4
