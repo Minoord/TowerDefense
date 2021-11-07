@@ -10,11 +10,11 @@ public class Shooting : MonoBehaviour
 
     [SerializeField] private float _radius;
     [SerializeField] private LayerMask _layer;
-    [SerializeField] private int _timer;
+    [SerializeField] private float _timer;
 
     private void Start()
     {
-        _timer = 500;
+        _timer = 5;
     }
 
     private void Update()
@@ -22,13 +22,13 @@ public class Shooting : MonoBehaviour
         enemy = GetFirstEnemyInRange();
         if (canAttack)
         {
-            _timer -= 1;
+            _timer -= Time.deltaTime;
         }
 
         if(enemy && _timer <= 0)
         {
             Instantiate(Bullet, this.gameObject.transform.position, Quaternion.identity);
-            _timer = 500;
+            _timer = 5;
         }
     }
 

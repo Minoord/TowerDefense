@@ -14,7 +14,7 @@ public class TowerAttack : MonoBehaviour
 
     private void Start()
     {
-        _timer = 400;
+        _timer = 2;
     }
 
     private void Update()
@@ -28,7 +28,7 @@ public class TowerAttack : MonoBehaviour
         if (enemy && _timer <= 0)
         {
             enemy.TakeDamage(_attackDamage);
-            _timer = 10;
+            _timer = 2;
         }
     }
 

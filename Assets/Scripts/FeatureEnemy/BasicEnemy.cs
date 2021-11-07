@@ -11,7 +11,7 @@ public class BasicEnemy : MonoBehaviour
     public WaveSpawnerScript WaveSpawnList;
     public Wallet wallet;
 
-    private int _enemyBurningTimer;
+    private float _enemyBurningTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class BasicEnemy : MonoBehaviour
         wallet = FindObjectOfType<Wallet>();
         WaveSpawnList.WaveEnemies.Add(this.gameObject);
         enemyBurning = false;
-        _enemyBurningTimer = 50;
+        _enemyBurningTimer = 5;
     }
 
     // Update is called once per frame
@@ -35,11 +35,11 @@ public class BasicEnemy : MonoBehaviour
 
         if (enemyBurning )
         {
-            _enemyBurningTimer -= 1;
+            _enemyBurningTimer -= Time.deltaTime;
             if( _enemyBurningTimer <= 0)
             {
                 TakeDamage(1);
-                _enemyBurningTimer = 50;
+                _enemyBurningTimer = 5;
             }
         }
     }

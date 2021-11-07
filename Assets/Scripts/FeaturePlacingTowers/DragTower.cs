@@ -60,7 +60,7 @@ public class DragTower : MonoBehaviour
             if(tile == true)
             {
                 wallet.MinusMoney(towerWorth);
-                towerPlaceShop.towerPrice += 30;
+                towerPlaceShop.towerPrice += 10;
                 shop.RefillShop(thisTowerPrefab, placeInShop);
                 this.transform.position = new Vector2 (tile.transform.position.x , tile.transform.position.y + 30);
                 tile.canBuildOn = false;

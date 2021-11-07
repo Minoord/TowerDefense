@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class WaveSpawnerScript : MonoBehaviour
+public class EndlessWave : MonoBehaviour
 {
     //These list are for spawning enemies
     public List<GameObject> WaveEnemies = new List<GameObject>();
@@ -23,63 +22,36 @@ public class WaveSpawnerScript : MonoBehaviour
     public int indexNumb; // knows the index number of _whichEnemyToSpawn
     public Text printWave;
     int i;
-    
+
     private void Start()
     {
-        _whichWave = 1;
-        _timer = 0;
         minEnemies = 5;
         maxEnemies = 10;
-        _howManyEnemies = RandomizeHowManyEnemies();
-         printWave = GameObject.Find("WaveCount").GetComponent<Text>();
+        RandomizeHowManyEnemies();
+        printWave = GameObject.Find("WaveCount").GetComponent<Text>();
     }
-
     private void Update()
     {
-        printWave.text = "Wave:" + _whichWave;
-        switch (_whichWave)
-            {
-                case 0:
-                    Debug.Log("Case 0");;
-                break;
-                case 1:
-                    RandomizeWhichEnemies(0, 2);
-                    break;
-                case 2:
-                    minEnemies = 10;
-                    maxEnemies = 15;
-                    RandomizeWhichEnemies(2,5);
-                    break;
-                case 3:
-                    minEnemies = 15;
-                    maxEnemies = 20;
-                    RandomizeWhichEnemies(5, 7);
-                    break;
-                case 4:
-                    minEnemies = 20;
-                    maxEnemies = 25;
-                    RandomizeWhichEnemies(7, 13);
-                    break;
-                case 5:
-                    SceneManager.LoadScene("WinGame");
-                    break;
-            }
-        
+        RandomizeWhichEnemies(0, EnemiesThatSpawn.Count);
+        printWave.text = "Wave :" + _whichWave;
     }
 
     public int RandomizeHowManyEnemies()
     {
-        _howManyEnemies = Random.Range(minEnemies,maxEnemies);
+        _howManyEnemies = Random.Range(minEnemies, maxEnemies);
+        minEnemies += 10;
+        maxEnemies += 10;
         return _howManyEnemies;
     }
+
     public int RandomizeWhichEnemies(int min, int max)
     {
-        if(i == _howManyEnemies)
+        if (i == _howManyEnemies)
         {
-            Debug.Log("_howManyEnemies is even groot als i");
+            //Debug.Log("_howManyEnemies is even groot als i");
             if (WaveEnemies.Count == 0)
             {
-                Debug.Log("New Wave");
+                //Debug.Log("New Wave");
                 _whichWave += 1;
                 _timer = 20;
                 RandomizeHowManyEnemies();
@@ -94,6 +66,7 @@ public class WaveSpawnerScript : MonoBehaviour
         }
         return indexNumb;
     }
+
     public void ActivateAddEnemy()
     {
         if (_timer <= 0)
@@ -102,11 +75,12 @@ public class WaveSpawnerScript : MonoBehaviour
             i += 1;
             _timer = 15;
         }
-    } 
+    }
     public void AddEnemy()
     {
         _whichEnemyToSpawn = EnemiesThatSpawn[indexNumb];
         Instantiate(_whichEnemyToSpawn, _spawnPoint.transform.position, Quaternion.identity);
     }
+
 
 }

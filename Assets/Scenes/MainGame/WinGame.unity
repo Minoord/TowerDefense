@@ -604,7 +604,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Press esc to exit or press the spacebar to retry '
+  m_Text: Press esc to exit or press the spacebar to try endless mode
 --- !u!222 &1985528367
 CanvasRenderer:
   m_ObjectHideFlags: 0
