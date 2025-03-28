@@ -90,6 +90,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   shop: {fileID: 0}
   wallet: {fileID: 0}
+  towerPlaceShop: {fileID: 0}
   attackTower: {fileID: 0}
   shootingTower: {fileID: 0}
   placeInShop: {fileID: 0}
@@ -114,6 +115,60 @@ MonoBehaviour:
     m_Bits: 8
   _timer: 0
   _attackDamage: 0
+--- !u!60 &5989905355644460873
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043289252529374416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1.38}
+    newSize: {x: 1.05, y: 1.38}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.49499997, y: -0.26999998}
+      - {x: 0.465, y: -0.19}
+      - {x: 0.385, y: -0.14999999}
+      - {x: 0.375, y: 0.29999998}
+      - {x: 0.435, y: 0.34}
+      - {x: 0.435, y: 0.58}
+      - {x: 0.255, y: 0.69}
+      - {x: -0.044999998, y: 0.69}
+      - {x: -0.145, y: 0.68}
+      - {x: -0.195, y: 0.66999996}
+      - {x: -0.345, y: 0.62}
+      - {x: -0.42499998, y: 0.53}
+      - {x: -0.42499998, y: 0.32999998}
+      - {x: -0.355, y: 0.29}
+      - {x: -0.345, y: 0.17}
+      - {x: -0.315, y: -0.14}
+      - {x: -0.45499998, y: -0.14}
+      - {x: -0.49499997, y: -0.32}
+      - {x: -0.42499998, y: -0.39}
+      - {x: -0.45499998, y: -0.38}
+      - {x: -0.475, y: -0.38}
+      - {x: -0.48499998, y: -0.41}
+      - {x: -0.405, y: -0.53999996}
+      - {x: -0.24499999, y: -0.65999997}
+      - {x: -0.13499999, y: -0.69}
+      - {x: 0.114999995, y: -0.69}
+      - {x: 0.235, y: -0.68}
+      - {x: 0.33499998, y: -0.59999996}
+      - {x: 0.475, y: -0.45999998}
 --- !u!50 &4824912399181421404
 Rigidbody2D:
   serializedVersion: 4
@@ -313,6 +368,7 @@ PrefabInstance:
     - {fileID: 2486908036997518262, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
     - {fileID: 2486908035097920390, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
     - {fileID: 2486908036997518263, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
+    - {fileID: -110463939443524902, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 383cea6069ff9c84f8b0f16f4e80ec15, type: 3}
 --- !u!1 &4043289252529374416 stripped
 GameObject:

@@ -57,7 +57,7 @@ public class DragTower : MonoBehaviour
     {
         if (inRangeOfTile && isDraggable)
         {
-            if(tile == true)
+            if(tile == true && tile.canBuildOn)
             {
                 wallet.MinusMoney(towerWorth);
                 towerPlaceShop.towerPrice += 10;
@@ -68,7 +68,8 @@ public class DragTower : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(this.gameObject);
+                shop.RefillShop(thisTowerPrefab, placeInShop);
             }
         }
         else
